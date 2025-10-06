@@ -4,11 +4,12 @@ const path = require('path');
 
 const router = express.Router();
 const LOG_FILE = path.join(__dirname, '..', 'visited_sites.txt');
+const SITE_TO_CHECK = 'chatgpt';
 
 function logVisit(site) {
     if(site && site.toLowerCase().includes('chatgpt')){
         return {
-            site: 'chatgpt',
+            site: SITE_TO_CHECK,
             message: 'Please do not share sensitive information'
         }
     }
